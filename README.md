@@ -1,5 +1,7 @@
 # LaTablaMods
 
+Make sure to check the wiki for installation instructions and more.
+
 This project uses the Tabla project by Chaim Gingold : 
 https://github.com/chaimgingold/Tabla/
 
