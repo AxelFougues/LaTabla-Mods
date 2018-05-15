@@ -21,12 +21,7 @@ void BlueprintWorld::initialize(){ //Called at world creation
 }
 
 void BlueprintWorld::update(){ //Called each frame
-    allGestureRecon();
-    updatePhysics();
-    for(Contour c : oGestures){
-        newDefaultShape(c.mCenter);
-    }
-    if(wGestures.size()>0)shapes.clear();
+    reconCubeInputs();
 }
 
 void BlueprintWorld::prepareToDraw(){ //Called before each draw call
@@ -34,11 +29,9 @@ void BlueprintWorld::prepareToDraw(){ //Called before each draw call
 }
 
 void BlueprintWorld::draw( DrawType drawType ){//Called many times per frame
-    drawWorldBounds(Colorf(0,1.0,1.0));
-    drawAllContours(Colorf(1.0,1.0,0));
-    drawAllGestures(Colorf(1.0,0,0), true);
-    drawShapes();
-    
+    for(Contour c : cubeInputs){
+        drawWorldBounds(getMeanContourColor(c));
+    }
 }
 
 

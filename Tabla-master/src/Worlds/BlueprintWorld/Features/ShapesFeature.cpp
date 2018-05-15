@@ -1,6 +1,7 @@
 #include "../BlueprintWorld.h"
 
 #ifdef isUsingShapes
+
 Shape* BlueprintWorld::newDefaultShape(vec2 loc){
     Square *shape = new Square(loc);
     shape->mAccel = Rand::randVec2() * shape->mScale/2.f;
